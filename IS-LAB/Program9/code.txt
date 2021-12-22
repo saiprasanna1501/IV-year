@@ -1,0 +1,32 @@
+public class diffie {
+public static long power(long a,long b,long p) {
+if(p == 1) {
+return a;
+} else {
+return (((long)Math.pow(a, b)) % p);
+}
+}
+public static void main(String args[]) {
+long a,b,x,y,P,G,ka,kb;
+
+P = 23;
+G = 9;
+
+a = 4;
+x = power(G,a,P);
+System.out.println("Private Key of Allice is:"+a);
+
+b = 3;
+y = power(G,b,P);
+System.out.println("Private Key of Bob is:"+b);
+
+ka = power(y,a,P);
+kb = power(x,b,P);
+
+System.out.println("Secret Key of Allice is:"+ka);
+System.out.println("Secret Key of Bob is:"+kb);
+
+
+}
+
+}
